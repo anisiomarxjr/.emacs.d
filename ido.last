@@ -1,0 +1,50 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/anisio/" . #(".emacs.d/" 0 4 (face flx-highlight-face)))
+ ("/home/anisio/developer/ruby/" . #("lucy/" 0 2 (face flx-highlight-face)))
+ ("/home/anisio/developer/js/systextilfv/app/" . "controllers/")
+ ("/home/anisio/developer/js/systextilfv/" . "app/")
+ ("/home/anisio/developer/js/" . "systextilfv/")
+ ("/home/anisio/developer/" . "ruby/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ #("/home/anisio/.emacs.d/" 13 17 (face flx-highlight-face))
+ #("/home/anisio/developer/ruby/lucy/" 13 16 (face flx-highlight-face) 23 28 (face flx-highlight-face) 28 30 (face flx-highlight-face))
+ "/home/anisio/developer/js/systextilfv/app/controllers/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ #("init.el" 0 3 (face flx-highlight-face))
+ "Gemfile"
+ "package.el"
+ "carrinho-controller.js"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ (#("/home/anisio/.emacs.d/" 13 17 (face flx-highlight-face)) (21603 63910 6691 452000) "init.el" "./" "auto-save-list/" "README.md" "smex-items" "elpa/" "screenshot.png" "package.el" "saveplace" "../" "ido.last" "packages/")
+
+ ("/home/anisio/developer/ruby/lucy/" (21603 63944 740024 623000) "vendor/" "Rakefile" "db/" "Gemfile" "log/" "./" "config.ru" ".rspec" "test/" "lib/" "public/" "config/" "Gemfile.lock" "../" ".git/" "bin/" "README.rdoc" ".gitignore" "app/" "spec/")
+
+ ("/home/anisio/" (21603 63555 833359 785000) ".zcompdump" ".directory" ".bash_logout" ".gem/" ".vim/" ".subversion/" ".Xauthority" ".viminfo" "./" ".thumbnails/" ".gpg-agent-info" ".emacs.d/" ".dropbox/" ".local/" ".xsession-errors" ".xinitrc" ".histfile" ".dotfiles/" ".cache/" ".hex/" ".npm/" ".zsh_history" "Dropbox/" ".mix/" ".cabal/" ".config/" ".gnome/" ".gnupg/" ".eclipse/" ".kde/" ".node-gyp/" "developer/" ".esd_auth" ".bash_profile" ".gitconfig" ".python_history" "../" ".kde4/" ".mplayer/" ".pki/" ".ssh/" ".qttest/" ".ghc/" ".dmrc" ".zsh-update" ".zcompdump-anisio-arch-5.0.7" ".bash_history" ".atom/" "Downloads/" ".oh-my-zsh/" "nltk_data/" "downloads/" ".bashrc" ".rbenv/" ".erlang.cookie" ".Skype/" ".zshrc")
+
+ ("/home/anisio/developer/ruby/" (21603 60218 226716 684000) "./" "tools/" "lucy/" "../")
+
+ ("/home/anisio/developer/js/systextilfv/app/controllers/" (21603 48801 590166 860000) "tipo-cliente-controller.js" "colecoes-controller.js" "items-pedido-controller.js" "./" "familias-controller.js" "titulo-controller.js" "login-controller.js" "bloqueios-controller.js" "items-pedido-controller/" "erros-sync-controller.js" "bancos-controller.js" "socios-controller.js" "estoque-controller.js" "condicao-pagamento-controller.js" "grades-controller.js" "referencias-bancarias-controller.js" "distribuicoes-controller.js" "itens-pedido-tecido-controller.js" "itens-pedido-confeccao-controller.js" "embalagem-controller.js" "dividir-pedido-controller.js" "enderecos-controller.js" "carrinho-controller.js" "imagem-controller.js" "cliente-empresa-controller.js" "items-tabela-preco-controller.js" "grupo-economico-controller.js" "visita-controller.js" ".gitkeep" "segmento-mercado-controller.js" "referencias-comerciais-controller.js" "../" "pedido-controller.js" "pedido-empresa-controller.js" "notas-controller.js" "cota-controller.js" "configuracoes-controller.js" "tabelas-preco-controller.js" "combinacoes-controller.js" "cidades-controller.js" "adiciona-item-carrinho-controller.js" "classificacoes-controller.js" "deposito-controller.js" "cliente-controller.js" "sincronizar-controller.js" "pedido-itens-controller.js" "referencias-controller.js" "fornecedores-controller.js")
+
+ ("/home/anisio/developer/js/systextilfv/app/" (21603 48801 603500 194000) "router/" "./" "views/" "olivia.js" "templates/" "seeds.js" "controllers/" "../" "sync/" "models/" "helpers/" "router.js")
+
+ ("/home/anisio/developer/js/systextilfv/" (21603 48801 640166 861000) "vendor/" "bower.json" "./" "index.html" "README.md" "package.json" "Gruntfile.js" "img/" "config/" "testem.json" "tests/" "loader.js" "../" ".git/" ".jshintrc" "karma.conf.js" ".gitignore" "app/" "Brocfile.js" ".bowerrc")
+
+ ("/home/anisio/developer/js/" (21603 49470 930187 183000) "systextilfv/" "./" "../")
+
+ ("/home/anisio/developer/" (21603 48642 933495 376000) "js/" "./" "anisiomarxjr.github.io/" "../" "java/" "ruby/" "elixir/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

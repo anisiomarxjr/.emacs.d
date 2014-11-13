@@ -1,0 +1,14 @@
+Leader: , (virgula)
+         t: find file
+         cc: comment
+         w: kill buffer
+         nn: neotree toggle
+         nf: neotree find
+         g
+                k: focus window up
+                j: focus window down
+                h: focus window left
+                l: focus window right
+         v
+                s: split window right
+                h: split window below
