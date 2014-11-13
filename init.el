@@ -216,9 +216,6 @@ Repeated invocations toggle between the two most recently open buffers."
 ;; Evil Bindings
 ;; =============================================================================
 (define-key evil-normal-state-map (kbd "RET") 'save-buffer)
-(define-key evil-normal-state-map (kbd "C-j") 'evil-scroll-down)
-(define-key evil-normal-state-map (kbd "C-k") 'evil-scroll-up)
-
 
 ;; Make ";" behave like ":" in normal mode
 (define-key evil-normal-state-map (kbd ";") 'evil-ex)
@@ -238,6 +235,10 @@ Repeated invocations toggle between the two most recently open buffers."
 (define-key evil-normal-state-map "gj" 'windmove-down)
 (define-key evil-normal-state-map "gk" 'windmove-up)
 (define-key evil-normal-state-map "gl" 'windmove-right)
+
+(define-key evil-normal-state-map (kbd "C-k") 'clipboard-kill-region)
+(define-key evil-normal-state-map (kbd "M-w") 'clipboard-kill-ring-save)
+(define-key evil-insert-state-map (kbd "C-y") 'clipboard-yank)
 
 (add-hook 'neotree-mode-hook
  (lambda ()
