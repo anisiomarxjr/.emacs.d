@@ -2,48 +2,103 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/home/anisio/" . #(".emacs.d/" 0 4 (face flx-highlight-face)))
- ("/home/anisio/developer/ruby/" . #("lucy/" 0 2 (face flx-highlight-face)))
+ ("/home/anisio/developer/ruby/sources/lucy/config/" . "initializers/")
+ ("/home/anisio/developer/js/sources/" . "systextilfv/")
+ ("/home/" . "anisio/")
+ ("/home/anisio/.emacs.d/packages/" . "pbcopy/")
+ ("/home/anisio/developer/ruby/sources/lucy/app/views/" . "layouts/")
+ ("/home/anisio/developer/ruby/sources/lucy/app/" . "views/")
+ ("/home/anisio/developer/ruby/sources/lucy/" . "app/")
+ ("/home/anisio/developer/ruby/sources/" . "lucy/")
+ ("/home/anisio/developer/python/sources/" . "py-elixirsips-downloader/")
+ ("/home/anisio/developer/python/" . "sources/")
+ ("/home/anisio/" . "developer/")
+ ("/home/anisio/developer/ruby/" . "sources/")
  ("/home/anisio/developer/js/systextilfv/app/" . "controllers/")
  ("/home/anisio/developer/js/systextilfv/" . "app/")
- ("/home/anisio/developer/js/" . "systextilfv/")
+ ("/home/anisio/developer/js/" . "sources/")
  ("/home/anisio/developer/" . "ruby/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
- #("/home/anisio/.emacs.d/" 13 17 (face flx-highlight-face))
- #("/home/anisio/developer/ruby/lucy/" 13 16 (face flx-highlight-face) 23 28 (face flx-highlight-face) 28 30 (face flx-highlight-face))
+ #("/home/anisio/.emacs.d/" 13 22 (face flx-highlight-face))
+ "/home/anisio/developer/ruby/sources/lucy/"
+ "/home/anisio/developer/ruby/sources/lucy/config/initializers/"
+ "/home/anisio/developer/js/sources/systextilfv/"
+ "/home/anisio/.emacs.d/packages/pbcopy/"
+ "/home/anisio/developer/python/sources/py-elixirsips-downloader/"
+ "/home/anisio/developer/ruby/sources/lucy/app/views/layouts/"
+ "/home/anisio/developer/ruby/lucy/"
  "/home/anisio/developer/js/systextilfv/app/controllers/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- #("init.el" 0 3 (face flx-highlight-face))
+ "init.el"
  "Gemfile"
+ "devise.rb"
+ "Brocfile.js"
+ "pbcopy.el"
+ "py-sips-downloader.py"
+ "application.html.erb"
  "package.el"
  "carrinho-controller.js"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- (#("/home/anisio/.emacs.d/" 13 17 (face flx-highlight-face)) (21603 63910 6691 452000) "init.el" "./" "auto-save-list/" "README.md" "smex-items" "elpa/" "screenshot.png" "package.el" "saveplace" "../" "ido.last" "packages/")
+ (#("/home/anisio/.emacs.d/" 13 22 (face flx-highlight-face)) (21616 41247 976996 617000) "init.el" "./" "auto-save-list/" "cheatsheet" "README.md" "smex-items" "elpa/" "screenshot.png" "package.el" "saveplace" "../" ".git/" "ido.last" "packages/" ".gitignore")
+
+ ("/home/anisio/" (21616 40801 603675 86000) ".zcompdump" ".directory" ".bash_logout" ".gem/" ".vim/" ".java/" ".subversion/" ".mozilla/" ".Xauthority" ".viminfo" "./" ".thumbnails/" ".gpg-agent-info" ".emacs.d/" ".dropbox/" ".local/" ".xsession-errors" ".xinitrc" ".histfile" ".dotfiles/" ".cache/" ".hex/" ".npm/" ".zsh_history" "Dropbox/" ".mix/" "oradiag_anisio/" ".cabal/" ".config/" ".gnome/" ".gnupg/" ".eclipse/" ".pyenv/" ".kde/" ".gtkrc-2.0" ".node-gyp/" "developer/" ".esd_auth" ".bash_profile" "Desktop/" ".gitconfig" ".m2/" ".python_history" "../" ".kde4/" ".mplayer/" ".grip/" ".qws/" ".pki/" ".android/" ".ssh/" ".qttest/" ".ghc/" ".dmrc" ".dropbox-dist/" ".zsh-update" ".zcompdump-anisio-arch-5.0.7" ".bash_history" ".atom/" ".tmp/" ".oh-my-zsh/" "mounts/" ".ICEauthority" ".gstreamer-0.10/" "downloads/" ".bashrc" ".rbenv/" ".erlang.cookie" ".Skype/" ".gtkrc-2.0-kde4" ".zshrc")
+
+ ("/home/anisio/developer/ruby/sources/lucy/config/" (21616 40654 287012 315000) "environments/" "./" "application.rb" "initializers/" "environment.rb" "locales/" "database.yml" "../" "boot.rb" "routes.rb" "secrets.yml")
+
+ ("/home/anisio/developer/ruby/sources/lucy/app/" (21616 39611 403706 555000) "mailers/" "./" "views/" "queries/" "controllers/" "../" "assets/" "models/" "helpers/")
+
+ ("/home/anisio/developer/ruby/sources/lucy/" (21616 39611 407039 889000) "vendor/" "Rakefile" "db/" "Gemfile" "log/" "./" "config.ru" ".rspec" "test/" "lib/" "public/" "config/" "Gemfile.lock" "../" ".git/" "bin/" "README.rdoc" ".gitignore" "app/" "spec/")
+
+ ("/home/anisio/developer/ruby/sources/" (21616 39604 213706 746000) "./" "lucy/" "../")
+
+ ("/home/anisio/developer/ruby/sources/lucy/config/initializers/" (21605 61255 490022 544000) "assets.rb" "./" "cookies_serializer.rb" "mime_types.rb" "filter_parameter_logging.rb" "wrap_parameters.rb" "backtrace_silencers.rb" "session_store.rb" "inflections.rb" "../" "devise.rb")
+
+ ("/home/anisio/developer/js/sources/systextilfv/" (21610 25483 433527 545000) "vendor/" "dist/" "bower.json" "./" "index.html" "tmp/" "README.md" "package.json" "Gruntfile.js" "img/" "config/" "testem.json" "tests/" "loader.js" "../" ".git/" ".jshintrc" "node_modules/" "karma.conf.js" ".gitignore" "app/" "Brocfile.js" ".bowerrc")
+
+ ("/home/anisio/developer/js/sources/" (21605 4590 63186 559000) "systextilfv/" "./" "../")
+
+ ("/home/anisio/developer/js/" (21605 4590 63186 559000) "./" "sources/" "../")
+
+ ("/home/" (21595 60254 360076 838000) "anisio/" "./" "../")
+
+ ("/home/anisio/.atom/" (21603 61325 993416 985000) "./" ".npm/" "../")
+
+ ("/home/anisio/.emacs.d/packages/pbcopy/" (21603 51393 110245 545000) "./" "pbcopy.el" "../")
+
+ ("/home/anisio/.emacs.d/packages/" (21603 51393 110245 545000) "./" "emacs-elixir/" "pbcopy/" "ujelly-theme/" "../" "change-case.el" "longlines/")
+
+ ("/home/anisio/developer/python/sources/py-elixirsips-downloader/" (21611 13442 886686 580000) "py-sips-downloader.py" "./" "README.md" ".python-version" "LICENSE" "../" ".git/" "elixirsips/" ".gitignore")
+
+ ("/home/anisio/developer/ruby/sources/lucy/app/controllers/" (21610 6742 223302 269000) "./" "application_controller.rb" "concerns/" "../")
+
+ ("/home/anisio/developer/ruby/sources/lucy/app/views/layouts/" (21605 61865 923374 412000) "./" "application.html.erb" "../")
+
+ ("/home/anisio/developer/ruby/sources/lucy/app/views/" (21603 60233 136717 138000) "./" "layouts/" "../")
+
+ ("/home/anisio/developer/ruby/" (21605 61021 530015 440000) "./" "sources/" "tools/" "../")
+
+ ("/home/anisio/developer/python/sources/" (21610 4560 389986 903000) "./" "py-elixirsips-downloader/" "sample.txt" "../" "ner.py")
+
+ ("/home/anisio/developer/python/" (21606 20067 537428 476000) "./" "sources/" "../" "nltk_data/")
+
+ ("/home/anisio/developer/" (21605 23323 446853 833000) "js/" "./" "anisiomarxjr.github.io/" "../" "java/" "ruby/" "python/" "elixir/")
 
  ("/home/anisio/developer/ruby/lucy/" (21603 63944 740024 623000) "vendor/" "Rakefile" "db/" "Gemfile" "log/" "./" "config.ru" ".rspec" "test/" "lib/" "public/" "config/" "Gemfile.lock" "../" ".git/" "bin/" "README.rdoc" ".gitignore" "app/" "spec/")
-
- ("/home/anisio/" (21603 63555 833359 785000) ".zcompdump" ".directory" ".bash_logout" ".gem/" ".vim/" ".subversion/" ".Xauthority" ".viminfo" "./" ".thumbnails/" ".gpg-agent-info" ".emacs.d/" ".dropbox/" ".local/" ".xsession-errors" ".xinitrc" ".histfile" ".dotfiles/" ".cache/" ".hex/" ".npm/" ".zsh_history" "Dropbox/" ".mix/" ".cabal/" ".config/" ".gnome/" ".gnupg/" ".eclipse/" ".kde/" ".node-gyp/" "developer/" ".esd_auth" ".bash_profile" ".gitconfig" ".python_history" "../" ".kde4/" ".mplayer/" ".pki/" ".ssh/" ".qttest/" ".ghc/" ".dmrc" ".zsh-update" ".zcompdump-anisio-arch-5.0.7" ".bash_history" ".atom/" "Downloads/" ".oh-my-zsh/" "nltk_data/" "downloads/" ".bashrc" ".rbenv/" ".erlang.cookie" ".Skype/" ".zshrc")
-
- ("/home/anisio/developer/ruby/" (21603 60218 226716 684000) "./" "tools/" "lucy/" "../")
 
  ("/home/anisio/developer/js/systextilfv/app/controllers/" (21603 48801 590166 860000) "tipo-cliente-controller.js" "colecoes-controller.js" "items-pedido-controller.js" "./" "familias-controller.js" "titulo-controller.js" "login-controller.js" "bloqueios-controller.js" "items-pedido-controller/" "erros-sync-controller.js" "bancos-controller.js" "socios-controller.js" "estoque-controller.js" "condicao-pagamento-controller.js" "grades-controller.js" "referencias-bancarias-controller.js" "distribuicoes-controller.js" "itens-pedido-tecido-controller.js" "itens-pedido-confeccao-controller.js" "embalagem-controller.js" "dividir-pedido-controller.js" "enderecos-controller.js" "carrinho-controller.js" "imagem-controller.js" "cliente-empresa-controller.js" "items-tabela-preco-controller.js" "grupo-economico-controller.js" "visita-controller.js" ".gitkeep" "segmento-mercado-controller.js" "referencias-comerciais-controller.js" "../" "pedido-controller.js" "pedido-empresa-controller.js" "notas-controller.js" "cota-controller.js" "configuracoes-controller.js" "tabelas-preco-controller.js" "combinacoes-controller.js" "cidades-controller.js" "adiciona-item-carrinho-controller.js" "classificacoes-controller.js" "deposito-controller.js" "cliente-controller.js" "sincronizar-controller.js" "pedido-itens-controller.js" "referencias-controller.js" "fornecedores-controller.js")
 
  ("/home/anisio/developer/js/systextilfv/app/" (21603 48801 603500 194000) "router/" "./" "views/" "olivia.js" "templates/" "seeds.js" "controllers/" "../" "sync/" "models/" "helpers/" "router.js")
 
  ("/home/anisio/developer/js/systextilfv/" (21603 48801 640166 861000) "vendor/" "bower.json" "./" "index.html" "README.md" "package.json" "Gruntfile.js" "img/" "config/" "testem.json" "tests/" "loader.js" "../" ".git/" ".jshintrc" "karma.conf.js" ".gitignore" "app/" "Brocfile.js" ".bowerrc")
-
- ("/home/anisio/developer/js/" (21603 49470 930187 183000) "systextilfv/" "./" "../")
-
- ("/home/anisio/developer/" (21603 48642 933495 376000) "js/" "./" "anisiomarxjr.github.io/" "../" "java/" "ruby/" "elixir/")
 )
 
 ;; ----- ido-unc-hosts-cache -----

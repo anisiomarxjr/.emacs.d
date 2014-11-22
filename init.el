@@ -30,18 +30,22 @@
 (set-default-font "Monaco 10")
 
 (smex-initialize)
-;(ido-hacks 1)
 
 (projectile-mode t)
 
-(setq ido-decorations (quote ("\n↪ "     "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+(global-set-key (kbd "C-x C-z") 'projectile-find-file)
 
+(global-set-key (kbd "C-x C-h") 'windmove-left)
+(global-set-key (kbd "C-x C-j") 'windmove-down)
+(global-set-key (kbd "C-x C-k") 'windmove-up)
+(global-set-key (kbd "C-x C-l") 'windmove-right)
+
+(setq ido-decorations (quote ("\n↪ "     "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
 
 (require 'flx-ido)
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
-
 
 ;; Parens handling
 ;; Show and create matching parens automatically
@@ -123,143 +127,6 @@
 (setq company-frontends '(company-pseudo-tooltip-on-explicit-action company-echo-metadata-on-explicit-action-frontend company-preview-if-just-one-frontend))
 ;; End TAB cycle hack
 
-
-;; =============================================================================
-;; Evil
-;; =============================================================================
-(require 'evil)
-(evil-mode 1)
-; (setq evil-default-cursor t)
-(progn (setq evil-default-state 'normal)
-       (setq evil-auto-indent t)
-       (setq evil-shift-width 2)
-       (setq evil-search-wrap t)
-       (setq evil-find-skip-newlines t)
-       (setq evil-move-cursor-back nil)
-       (setq evil-mode-line-format 'before)
-       (setq evil-esc-delay 0.001)
-       (setq evil-cross-lines t))
-
-(setq evil-overriding-maps nil)
-(setq evil-intercept-maps nil)
-
-;; Don't wait for any other keys after escape is pressed.
-(setq evil-esc-delay 0)
-
-;; Don't show default text in command bar
-;  ** Currently breaks visual range selection, looking for workaround
-;(add-hook 'minibuffer-setup-hook (lambda () (evil-ex-remove-default)))
-
-;; Make HJKL keys work in special buffers
-(evil-add-hjkl-bindings magit-branch-manager-mode-map 'emacs
-  "K" 'magit-discard-item
-  "L" 'magit-key-mode-popup-logging)
-(evil-add-hjkl-bindings magit-status-mode-map 'emacs
-  "K" 'magit-discard-item
-  "l" 'magit-key-mode-popup-logging
-  "h" 'magit-toggle-diff-refine-hunk)
-(evil-add-hjkl-bindings magit-log-mode-map 'emacs)
-(evil-add-hjkl-bindings magit-commit-mode-map 'emacs)
-(evil-add-hjkl-bindings occur-mode 'emacs)
-
-(setq evil-want-C-i-jump t)
-(setq evil-want-C-u-scroll t)
-
-(global-evil-leader-mode)
-(evil-leader/set-leader ",")
-(evil-leader/set-key
-  "." 'find-tag
-  "t" 'projectile-find-file
-  "b" 'ido-switch-buffer
-  "cc" 'evilnc-comment-or-uncomment-lines
-  "ag" 'projectile-ag
-  "," 'switch-to-previous-buffer
-  ; "gg" 'git-gutter+:toggle
-  ; "gd" 'git-gutter+:popup-diff
-  ; "gp" 'git-gutter+:previous-hunk
-  ; "gn" 'git-gutter+:next-hunk
-  ; "gr" 'git-gutter+:revert-hunk
-  "gb" 'mo-git-blame-current
-  "gl" 'magit-log
-  "gs" 'magit-status
-  "w"  'kill-buffer
-  "nn" 'neotree-toggle
-  "nf" 'neotree-find
-  "gk" 'windmove-up
-  "gj" 'windmove-down
-  "gl" 'windmove-right
-  "gh" 'windmove-left
-  "vs" 'split-window-right
-  "hs" 'split-window-below
-  "x" 'smex)
-
-;; =============================================================================
-;; Evil Packages
-;; =============================================================================
-(global-evil-surround-mode 1)
-
-(require 'evil-visualstar)
-
-(defun fix-underscore-word ()
-  (modify-syntax-entry ?_ "w"))
-
-(defun buffer-exists (bufname)   (not (eq nil (get-buffer bufname))))
-(defun switch-to-previous-buffer ()
-  "Switch to previously open buffer.
-Repeated invocations toggle between the two most recently open buffers."
-  (interactive)
-  ;; Don't switch back to the ibuffer!!!
-  (if (buffer-exists "*Ibuffer*")  (kill-buffer "*Ibuffer*"))
-  (switch-to-buffer (other-buffer (current-buffer) 1)))
-
-;; =============================================================================
-;; Evil Bindings
-;; =============================================================================
-(define-key evil-normal-state-map (kbd "RET") 'save-buffer)
-
-;; Make ";" behave like ":" in normal mode
-(define-key evil-normal-state-map (kbd ";") 'evil-ex)
-(define-key evil-visual-state-map (kbd ";") 'evil-ex)
-(define-key evil-motion-state-map (kbd ";") 'evil-ex)
-
-;; Yank whole buffer
-(define-key evil-normal-state-map (kbd "gy") (kbd "gg v G y"))
-
-(setq key-chord-two-keys-delay 0.2)
-(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-(key-chord-define evil-insert-state-map "Jk" 'evil-normal-state)
-(key-chord-define evil-insert-state-map "JK" 'evil-normal-state)
-(key-chord-mode 1)
-
-(define-key evil-normal-state-map "gh" 'windmove-left)
-(define-key evil-normal-state-map "gj" 'windmove-down)
-(define-key evil-normal-state-map "gk" 'windmove-up)
-(define-key evil-normal-state-map "gl" 'windmove-right)
-
-(define-key evil-normal-state-map (kbd "C-k") 'clipboard-kill-region)
-(define-key evil-normal-state-map (kbd "M-w") 'clipboard-kill-ring-save)
-(define-key evil-insert-state-map (kbd "C-y") 'clipboard-yank)
-
-(add-hook 'neotree-mode-hook
- (lambda ()
-   (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
-   (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
-   (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
-   (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)
-	 (define-key evil-normal-state-local-map (kbd "ma") 'neotree-create-node)
-	 (define-key evil-normal-state-local-map (kbd "md") 'neotree-delete-node)
-	 (define-key evil-normal-state-local-map (kbd "r") 'neotree-refresh)
-	 (define-key evil-normal-state-local-map (kbd "mm") 'neotree-rename-node)
-))
-
-;; Map ctrl-j/k to up down in ido selections
-(add-hook 'ido-setup-hook
-  (lambda ()
-    (define-key ido-completion-map (kbd "C-j") 'ido-next-match)
-    (define-key ido-completion-map (kbd "C-k") 'ido-prev-match)
-))
-
-
 ;; =============================================================================
 ;; UI
 ;; =============================================================================
@@ -326,58 +193,6 @@ Repeated invocations toggle between the two most recently open buffers."
 (defun my-send-string-to-terminal (string)
    (unless (display-graphic-p) (send-string-to-terminal string)))
 
-(defun my-evil-terminal-cursor-change ()
-   (when (string= (getenv "TERM_PROGRAM") "iTerm.app")
-        (add-hook 'evil-insert-state-entry-hook (lambda () (my-send-string-to-terminal "\e]50;CursorShape=1\x7")))
-           (add-hook 'evil-insert-state-exit-hook  (lambda () (my-send-string-to-terminal "\e]50;CursorShape=0\x7"))))
-     (when (and (getenv "TMUX") (string= (getenv "TERM_PROGRAM") "iTerm.app"))
-          (add-hook 'evil-insert-state-entry-hook (lambda () (my-send-string-to-terminal "\ePtmux;\e\e]50;CursorShape=1\x7\e\\")))
-              (add-hook 'evil-insert-state-exit-hook  (lambda () (my-send-string-to-terminal "\ePtmux;\e\e]50;CursorShape=0\x7\e\\")))))
-
-  (add-hook 'after-make-frame-functions (lambda (frame) (my-evil-terminal-cursor-change)))
-  (my-evil-terminal-cursor-change)
-
-
-;; (defun change-major-mode-hook () (modify-syntax-entry ?_ "w"))
-
-; (defun evil-move-point-by-word (dir)
-;   "Used internally by evil
-;
-; A pure-vim emulation of move-word runs slow, but emacs forward-word
-; does not recognize underscores as word boundaries. This method calls
-; Emacs native forward-word, and then repeats if it detects it stopped
-; on an underscore."
-;   (let ((success (forward-word dir))
-;         (fn (if (= 1 dir) 'looking-at 'looking-back)))
-;
-;     (if (and success (funcall fn "_"))
-;         (evil-move-point-by-word dir)
-;       success)))
-;
-; (defun evil-forward-word (&optional count)
-;   "Move by words.
-; Moves point COUNT words forward or (- COUNT) words backward if
-; COUNT is negative. This function is the same as `forward-word'
-; but returns the number of words by which point could *not* be
-; moved."
-;   (setq count (or count 1))
-;   (let* ((dir (if (>= count 0) +1 -1))
-;          (count (abs count)))
-;     (while (and (> count 0)
-;                 (evil-move-point-by-word dir))
-;       (setq count (1- count)))
-;     count))
-;
-; (evil-define-union-move evil-move-word (count)
-;   "Move by words."
-;   (evil-move-chars "^ \t\r\n[:word:]_" count)
-;   (let ((word-separating-categories evil-cjk-word-separating-categories)
-;         (word-combining-categories evil-cjk-word-combining-categories))
-;     (evil-forward-word count))
-;   (evil-move-empty-lines count))
-
-
-
 ;; =============================================================================
 ;; Custom Packages
 ;; =============================================================================
@@ -395,9 +210,9 @@ Repeated invocations toggle between the two most recently open buffers."
 ;     `(company-tooltip-selection ((t (:background "#363636"))))))
 
 
-(add-to-list 'load-path "~/.emacs.d/packages/pbcopy/")
-(require 'pbcopy)
-(turn-on-pbcopy)
+; (add-to-list 'load-path "~/.emacs.d/packages/xclip/") ;
+(require 'xclip)
+(turn-on-xclip)
 
 (add-to-list 'load-path "~/.emacs.d/packages/longlines/")
 (require 'longlines)
@@ -413,14 +228,10 @@ Repeated invocations toggle between the two most recently open buffers."
 
 (load "~/.emacs.d/packages/change-case.el")
 
-;;; esc quits
-;; (define-key evil-normal-state-map (kbd "ESC") 'keyboard-quit)
-;; (define-key evil-visual-state-map (kbd "ESC") 'keyboard-quit)
-;; (define-key minibuffer-local-map (kbd "ESC") 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-ns-map (kbd "ESC") 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-completion-map (kbd "ESC") 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-must-match-map (kbd "ESC") 'minibuffer-keyboard-quit)
-;; (define-key minibuffer-local-isearch-map (kbd "ESC") 'minibuffer-keyboard-quit)
+(add-to-list 'load-path "/some/path/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
 
 ;; Enable mouse support
 (unless window-system
@@ -463,77 +274,6 @@ Repeated invocations toggle between the two most recently open buffers."
 
 ;; Space indentation - I want tab as two spaces everywhere
 (setq-default indent-tabs-mode nil)
-(add-hook 'enh-ruby-mode-hook (lambda () (setq evil-shift-width 2)))
-(add-hook 'ruby-mode-hook (lambda () (setq evil-shift-width 2)))
-(add-hook 'elixir-mode-hook (lambda () (setq evil-shift-width 2)))
-(add-hook 'coffee-mode-hook (lambda () (setq evil-shift-width 2)))
-(add-hook 'haml-mode-hook (lambda () (setq evil-shift-width 2)))
-
-
-;; Play nice with evil-mode in compilation-mode, ie project-ag results
-(add-hook 'compilation-mode-hook '(lambda ()
-                                    (local-unset-key "g")
-                                    (local-unset-key "h")
-                                    (local-unset-key "k")))
-
-;;==============================================================================
-;; Hack "*" to hightlight, but not jump to first match
-(defun my-evil-prepare-word-search (forward symbol)
-  "Prepare word search, but do not move yet."
-  (interactive (list (prefix-numeric-value current-prefix-arg)
-                     evil-symbol-word-search))
-  (let ((string (car-safe regexp-search-ring))
-        (move (if forward #'forward-char #'backward-char))
-        (end (if forward #'eobp #'bobp)))
-    (setq isearch-forward forward)
-    (setq string (evil-find-thing forward (if symbol 'symbol 'word)))
-    (cond
-     ((null string)
-      (error "No word under point"))
-     (t
-      (setq string
-            (format (if symbol "\\_<%s\\_>" "\\<%s\\>")
-                    (regexp-quote string)))))
-    (evil-push-search-history string forward)
-    (my-evil-search string forward t)))
-
-(defun my-evil-search (string forward &optional regexp-p start)
-  "Highlight STRING matches.
-If FORWARD is nil, search backward, otherwise forward.
-If REGEXP-P is non-nil, STRING is taken to be a regular expression.
-START is the position to search from; if unspecified, it is
-one more than the current position."
-  (when (and (stringp string)
-             (not (string= string "")))
-    (let* ((orig (point))
-           (start (or start
-                      (if forward
-                          (min (point-max) (1+ orig))
-                        orig)))
-           (isearch-regexp regexp-p)
-           (isearch-forward forward)
-           (case-fold-search
-            (unless (and search-upper-case
-                         (not (isearch-no-upper-case-p string nil)))
-              case-fold-search)))
-      ;; no text properties, thank you very much
-      (set-text-properties 0 (length string) nil string)
-      (setq isearch-string string)
-      (isearch-update-ring string regexp-p)
-      ;; handle opening and closing of invisible area
-      (cond
-       ((boundp 'isearch-filter-predicates)
-        (dolist (pred isearch-filter-predicates)
-          (funcall pred (match-beginning 0) (match-end 0))))
-       ((boundp 'isearch-filter-predicate)
-        (funcall isearch-filter-predicate (match-beginning 0) (match-end 0))))
-      (evil-flash-search-pattern string t))))
-
-(define-key evil-motion-state-map "*" 'my-evil-prepare-word-search)
-(define-key evil-motion-state-map (kbd "*") 'my-evil-prepare-word-search)
-;; end highlight hack
-;;==============================================================================
-
 
 ;; Enable syntax highlighting in markdown
 (require 'mmm-mode)
